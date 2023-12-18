@@ -29,28 +29,44 @@ Before you begin, ensure that you have the following prerequisites installed:
 ### Installation
 
 1. Clone the repository:
+   ```
    git clone https://github.com/jeonlei-01/favcon_appointment_system.git
+   ```
 
 2. Install PHP dependencies:
+   ```
    composer install
+   ```
 
 3. Install JavaScript dependencies:
+   ```
    npm install && npm run dev
+   ```
 
 4. Copy the `.env.example` file to `.env` and configure your database connection:
+   ```
    cp .env.example .env
+   ```
 
 5. Generate an application key:
+   ```
    php artisan key:generate
+   ```
 
 6. Migrate the database:
+   ```
    php artisan migrate
+   ```
 
 7. Seed the database with sample data (optional):
+   ```
    php artisan db:seed
+   ```
 
 8. Run the development server:
+   ```
    php artisan serve
+   ```
 
    FAVCON is now accessible at [http://localhost:8000](http://localhost:8000).
 
