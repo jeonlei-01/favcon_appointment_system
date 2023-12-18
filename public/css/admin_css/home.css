@@ -1,0 +1,785 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(184, 174, 174, 0.287);
+    color: #ff7c03;
+    font-family: "Montserrat", sans-serif;
+}
+.material-icons-outlined {
+    vertical-align: middle;
+    line-height: 1px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+        "sidebar header header header"
+        "sidebar main main main";
+    height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+    grid-area: header;
+    height: 90px;
+    /* background-color: #F8AF5B; */
+    background: linear-gradient(to right, #F8AF5B, #f8f6f2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* .header-right span {
+    font-size: 25px;
+    color: #FF7C03;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header-right span img {
+    width: 35px;
+    border: 1px solid #FF7C03;
+    border-radius: 50%;
+  } */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column; 
+    text-align: center; 
+  }
+  
+  .header-right span {
+    font-size: 25px;
+    color: #FF7C03;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header-right span img {
+    width: 35px;
+    border: 1px solid #FF7C03;
+    border-radius: 50%;
+  }
+  
+  .header-right p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+    /* Styling for the dropdown menu */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #F8AF5B;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      margin-left: -60px;
+      width: 115px;
+      margin-top: 62px;
+  }
+  
+  /* Styling for the dropdown items */
+  .dropdown-item {
+      padding: 10px;
+  }
+  .header-right a {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  
+    
+  }
+  
+  
+  .dropdown-item:hover{
+    cursor: pointer;
+    background: #FF7C03;
+  }
+
+/* ---------- SIDEBAR ---------- */
+
+#sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background: linear-gradient(to bottom, #f8af5b, #f8f6f2);
+    color: #ff7c03;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 80px;
+}
+
+.sidebar-title > span {
+    display: none;
+}
+
+.sidebar-brand {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ff7c03;
+    text-shadow: 2px 2px 4px rgba(238, 203, 121, 0.915);
+}
+
+.sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+}
+
+.sidebar-list-item:hover {
+    background-color: #ff7c03;
+    cursor: pointer;
+}
+
+.sidebar-list-item > a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 17px;
+}
+.sidebar-list-item > a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+.sidebar-list li a span {
+    color: #ff7c03;
+}
+
+.sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+}
+
+.main-container {
+    grid-area: main;
+    overflow-y: hidden;
+    padding: 0px 10px;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* --- in two box--- */
+
+/* .col-div-3 {
+    width: 50%;
+    float: left;
+} */
+.box {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    width: 80%;
+    height: 300px;
+    background-color: white;
+    margin-left: 10px;
+    padding: 10px;
+    overflow-y: auto;
+ 
+
+}
+
+.box p {
+    font-size: 35px;
+    color: #ff7c03;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.box p span {
+    font-size: 20px;
+    font-weight: 400;
+    color: #818181;
+}
+.box-icon {
+    font-size: 40px !important;
+    float: right;
+    margin-top: 35px !important;
+    color: green;
+    padding-right: 10px;
+}
+.box-icons {
+    font-size: 40px !important;
+    float: right;
+    margin-top: 35px !important;
+    color: red;
+    padding-right: 10px;
+}
+
+/* --- in calendar--- */
+
+
+
+
+.col-div-8 {
+    width: 70%;
+    /* height: auto; */
+    float: left;
+}
+.col-div-4 {
+    width: 30%;
+    float: left;
+}
+.content-box {
+    padding: 20px;
+}
+.content-box p {
+    margin: 0px;
+    font-size: 20px;
+    color: #ff7c03;
+    font-weight: bold;
+}
+.content-box p span {
+    float: right;
+    background-color: wheat;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+.box-8,
+.box-4 {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    width: 85%;
+    background-color: white;
+    height: auto;
+    padding: 10px;
+}
+.nav2 {
+    display: none;
+}
+
+.box-8 {
+    margin-left: 10px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    text-align: center;
+    padding: 10px;
+    color: black;
+    border-bottom: 1px solid #ff7c03;
+}
+td {
+    text-align: center;
+    padding: 10px;
+    color: rgb(65, 63, 63);
+    border-bottom: 1px solid #ff7c03;
+}
+.circle-wrap {
+    margin: 50px auto;
+    width: 150px;
+    height: 150px;
+    background: #e6e2e7;
+    border-radius: 50%;
+}
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 50%;
+}
+.circle-wrap .circle .mask {
+    clip: rect(0px, 150px, 150px, 75px);
+}
+
+.circle-wrap .circle .mask .fill {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: #f7403b;
+}
+.circle-wrap .circle .mask.full,
+.circle-wrap .circle .fill {
+    animation: fill ease-in-out 3s;
+    transform: rotate(126deg);
+}
+
+@keyframes fill {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(126deg);
+    }
+}
+.circle-wrap .inside-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #fff;
+    line-height: 130px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 2em;
+}
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* --- in calendar--- */
+
+.wrapper {
+    margin-left: -110px;
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px 10px;
+    justify-content: space-between;
+}
+
+header .icons {
+    display: flex;
+}
+
+header .icons span {
+    font-weight: bold;
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #ff7c03;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+}
+
+.icons span:last-child {
+    margin-right: -10px;
+}
+
+header .icons span:hover {
+    background: #f2f2f2;
+}
+
+header .current-date {
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.calendar {
+    padding: 20px;
+}
+
+.calendar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    font-size: 10px;
+}
+
+.calendar .days {
+    margin-bottom: 20px;
+}
+
+.calendar li {
+    color: #333;
+    width: calc(100% / 7);
+    font-size:10px;
+}
+
+.calendar .weeks li {
+    font-weight: 500;
+    cursor: default;
+}
+
+.calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+}
+
+.days li.inactive {
+    color: #aaa;
+}
+
+.days li.active {
+    color: #fff;
+}
+
+.days li::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+    background: #ff7c03;
+}
+
+.days li:not(.active):hover::before {
+    background: #f6bf80;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Medium <= 992px */
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas:
+            "header"
+            "main";
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    .menu-icon {
+        display: inline;
+    }
+
+    .sidebar-title > span {
+        display: inline;
+    }
+}
+
+/* Small <= 768px */
+@media screen and (max-width: 768px) {
+    .main-title p {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+
+/* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+    .header-left {
+        display: none;
+    }
+}
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .charts {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .charts-card {
+        overflow-x: hidden;
+        font-size: 10px;
+        margin: 0;
+        padding: 10px;
+    }
+    table tr td a button {
+        font-size: 9px;
+    }
+}
+
+
+/* Responsive styles using media queries */
+@media (max-width: 768px) {
+    .col-div-1,
+    .col-div-8,
+
+    .col-div-3 {
+        width: 100%;
+       
+    }
+}
+@media (max-width: 768px) {
+    
+    .col-div-4 {
+        margin: 0;
+        margin-top: 80px;
+        align-items: center;
+        margin-left: 0;
+       
+    }
+    .wrapper {
+        margin-left: 0px;
+       
+    }
+    .col-div-3 {
+        margin-bottom: 1rem;
+       
+    }
+    .main-container{
+        overflow: auto;
+    }
+}
+
+/* @media (min-width: 769px) and (max-width: 1024px) {
+    .col-div-1,
+    .col-div-8,
+    .col-div-4,
+    .col-div-3 {
+        width: 50%;
+    }
+} */
+
+/* @media (min-width: 1025px) {
+    .col-div-1 {
+        width: 33.33%;
+    }
+    .col-div-8,
+    .col-div-4,
+    .col-div-3 {
+        width: 25%;
+    }
+} */
+/* Styles for the modal and overlay */
+.modal {
+    display: none;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal button  {
+    color: #FF7C03;
+    border: 1px solid #FF7C03;
+    background-color: transparent;
+    padding: 4px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    }
+    .modal button a {
+    color: #FF7C03;
+    }
+    .modal button:hover {
+    background-color:#FF7C03;
+    color: #fff;
+    }
+    .modal button a:hover {
+    color: #fff;
+    
+    }
+    .modal form,
+    .modal button {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    
+    
+    #logoutButton {
+    color: #FF7C03;
+    font-weight: 600;
+    }
+    #logoutButton:hover {
+    color: #fff;
+    }
+    /*for the Change Pass*/
+
+.modalCP {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Styles for the modal content */
+  .modal-contentCP {
+    background-color: #fff;
+    margin: 9% auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+  
+  }
+  
+  .modal-contentCP h2 {
+  color: #FF7C03;
+  }
+  #passwordForm {
+    display: grid;
+    gap: 10px;
+    text-align: left;
+  }
+  
+  #passwordForm label {
+    font-weight:300;
+    
+  }
+  
+  #passwordForm input[type="password"] {
+    /* width: 100%; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+  
+  }
+  
+  #passwordForm button[type="submit"] {
+    background-color: #FF7C03;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #passwordForm button[type="submit"]:hover {
+    background-color: #F8AF5B;
+  }
+  
+  /* Close button style */
+  .closeCP {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FF7C03;
+  }
+  
+  /* Responsive design for the modal */
+  @media screen and (max-width: 600px) {
+    .modal-content {
+        margin: 10% auto;
+        width: 80%;
+    }
+  }
+  
+  /* Unique button style */
+  .unique-button {
+    background-color: #FF7C03;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .unique-button:hover {
+    background-color: #FF7C03;
+  }
+  /* ---------- SCROLLBARS ---------- */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #a5aaad;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #FF7C03;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a5aaad;
+  }
+
+
+ .col-div-8 table tr td{
+    border: 2px solid #fff;
+    padding: 10px;
+
+ }
+ .col-div-8 table, tr, td {
+    border: 1px solid red;
+ }
+ .col-div-8 table tr:nth-child(even){
+    background-color: #e6dddd;
+}
+
+ .content-box table tr th {
+    background-color: #e6dddd;
+    border: 2px solid #fff;
+ }
+
+ .content-box table tr td {
+    background-color: #fff;
+    border: 2px solid #fff;
+ }
+
+ 

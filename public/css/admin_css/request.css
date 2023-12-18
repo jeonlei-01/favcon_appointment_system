@@ -1,0 +1,519 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(184, 174, 174, 0.287);
+    color: #FF7C03;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .material-icons-outlined {
+    vertical-align: middle;
+    line-height: 1px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "sidebar header header header"
+      "sidebar main main main";
+    height: 100vh;
+  }
+  
+  
+  /* ---------- HEADER ---------- */
+  
+  .header {
+    grid-area: header;
+    height: 90px;
+    /* background-color: #F8AF5B; */
+    background: linear-gradient(to right, #F8AF5B, #f8f6f2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+
+  .header-right span {
+    font-size: 25px;
+    color: #FF7C03;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header-right span img {
+    width: 35px;
+    border: 1px solid #FF7C03;
+    border-radius: 50%;
+  }
+  
+
+
+  
+
+    /* Styling for the dropdown menu */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #F8AF5B;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      margin-left: -60px;
+      width: 115px;
+      margin-top: 5px;
+  }
+  
+  /* Styling for the dropdown items */
+  .dropdown-item {
+      padding: 10px;
+  }
+  .header-right a {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  
+    
+  }
+  
+  
+  .dropdown-item:hover{
+    cursor: pointer;
+    background: #FF7C03;
+  }
+    
+  
+  
+  /* ---------- SIDEBAR ---------- */
+  
+  #sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background: linear-gradient(to bottom, #F8AF5B, #f8f6f2);
+    color: #FF7C03;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 80px;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #FF7C03;
+    text-shadow: 2px 2px 4px rgba(238, 203, 121, 0.915);
+
+
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+  }
+  
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+  }
+  
+  .sidebar-list-item:hover {
+    background-color: #FF7C03;
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .sidebar-list-item > a:hover{
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .sidebar-list li a span{
+    color: #FF7C03;
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+
+    
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+  }
+  
+
+  /* ---------- MAIN ---------- */
+  
+  .main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+   
+  }
+  
+  .main-title {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-title > p {
+    font-size: 25px;
+    
+  }
+  
+  
+  
+  .charts-card {
+    /* display: flex; */
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    height: auto;
+  }
+  
+  .charts-card h2 {
+    font-size: 14px;
+  }
+  .charts-card p {
+    font-size: 10px;
+  }
+
+  #action {
+    display:grid;
+    justify-content: center;
+  }
+  
+  #action button {
+    font-size: 10px;
+    width: auto;
+    cursor: pointer;
+    margin: 1px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FF7C03;
+    color: #fff;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+  }
+
+  #action button:hover {
+    background: transparent;
+    border: 1px solid #FF7C03;
+    color: #FF7C03;
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .action-container #accept-btn {
+    background: #F8AF5B;
+  }
+
+
+  .action-container #setting-btn{
+    background: transparent;
+    color: #FF7C03;
+    border: 1px solid #FF7C03;
+  }
+  .action-container #setting-btn:hover{
+    background: #FF7C03;
+    color: #fff;
+    border: 1px solid #FF7C03;
+  }
+
+/* ================================================= FOR THE MODAL REQUEST SETTINGS ======================= */
+  .modalRequest {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modalRequest1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-request {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Media Query for Responsiveness */
+@media screen and (max-width: 600px) {
+    .modal-request {
+        max-width: 90%;
+    }
+}
+
+/* Show the modal when it's open */
+.modalRequest.open {
+    display: block;
+}
+
+.tableRequest {
+  /* display: flex ; */
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 1px 60px;
+}
+
+.tableRequest p, .review {
+  font-size: 12px;
+}
+.tableRequest p{
+  font-weight: 700;
+}
+
+.Rdate {
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.startTime {
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.endTime {
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.available {
+  display: flex ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsRccs {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+
+  
+  
+/* ================================================= FOR THE MODAL REQUEST SETTINGS END ======================= */
+  
+  
+  /* ---------- SCROLLBARS ---------- */
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #a5aaad;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #FF7C03;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a5aaad;
+  }
+  
+  
+  /* ---------- MEDIA QUERIES ---------- */
+  
+  
+  /* Medium <= 992px */
+  @media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        "header"
+        "main";
+    }
+  
+    #sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+  
+  /* Small <= 768px */
+  @media screen and (max-width: 768px) {
+    .main-title p{
+      font-size: 15px;
+      font-weight: 600;
+
+    }
+  
+    .charts {
+      grid-template-columns: 1fr;
+      margin-top: 30px;
+    }
+  }
+  
+  /* Extra Small <= 576px */
+  @media screen and (max-width: 576px) {
+    .header-left {
+      display: none;
+    }
+
+    #action {
+      display:grid;
+      justify-content: center;
+      margin: 20px;
+    }
+  }
+
+.active{
+    color: #FF7C03;
+}
+                                
+                                
+.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 32px;
+    background-color: #FF7C03;
+                                
+}
+
+
+
+  /* Styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal p{
+    color: #000;
+    font-size: 14px;
+}
+.modal-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button {
+    cursor: pointer;
+ background: transparent;
+ border: .5px solid #FF7C03;
+ border-radius: 2px;
+ padding: 4px 8px;
+ margin: 5px;
+ font-size: 12px;
+ color: #FF7C03;
+}
+
+.modal-content button:hover {
+    background: #FF7C03;
+    color: #fff;
+}
+
+
+
+/* COLUMN */
+/* Create four equal columns that floats next to each other */
+.column {
+  margin: 2px;
+  /* border: 1px solid #F8AF5B; */
+  text-align: center;
+  float: left;
+  width: 22%;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* STYLE FOR THE ACTION IN REQUEST TABLE */
